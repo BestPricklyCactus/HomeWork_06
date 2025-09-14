@@ -1,6 +1,7 @@
 package otus.homework.reactivecats
 
 import android.content.Context
+import android.util.Log
 import io.reactivex.Flowable
 import io.reactivex.Single
 import java.util.concurrent.TimeUnit
@@ -33,6 +34,8 @@ class LocalCatFactsGenerator(
     }
 
     fun getRandomCatFact(): Fact {
-        return Fact(context.resources.getStringArray(R.array.local_cat_facts)[Random.nextInt(5)])
+        val fact = context.resources.getStringArray(R.array.local_cat_facts)[Random.nextInt(5)]
+        //Log.d("${javaClass.name}#getRandomCatFact()", "random fact = $fact")
+        return Fact(fact);
     }
 }
